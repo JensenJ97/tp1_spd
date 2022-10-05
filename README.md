@@ -45,6 +45,61 @@ void loop()
 {
   int milesimas = millis();
   int segundos = milesimas/1000;
-  
-  Serial.println(segundos);
+  encenderNumeros(segundos);
+  apagarLeds();
+}
+
+void apagarLeds(){
+  digitalWrite(PRIMERO, LOW);
+  digitalWrite(SEGUNDO, LOW);
+  digitalWrite(TERCERO, LOW);
+  digitalWrite(CUARTO, LOW);
+  digitalWrite(QUINTO, LOW);
+  digitalWrite(SEXTO, LOW);
+  digitalWrite(SEPTIMO, LOW);
+  digitalWrite(OCTAVO, LOW);
+  digitalWrite(NOVENO, LOW);
+  digitalWrite(DECIMO, LOW);
+}
+
+void encenderNumeros (int segundos){
+  switch (segundos){
+    case 1:
+    digitalWrite(PRIMERO, HIGH);
+    break;
+    case 2:
+	digitalWrite(SEGUNDO, HIGH);
+    break;
+    case 3:
+    digitalWrite(PRIMERO, HIGH);
+    digitalWrite(SEGUNDO, HIGH);
+  	break;
+    case 4:
+    digitalWrite(TERCERO, HIGH);
+    break;
+    case 5:
+    digitalWrite(TERCERO, HIGH);
+    digitalWrite(PRIMERO, HIGH);
+    break;
+    case 6:
+    digitalWrite(TERCERO, HIGH);
+    digitalWrite(SEGUNDO, HIGH);
+    break;
+    case 7:
+    digitalWrite(TERCERO, HIGH);
+    digitalWrite(SEGUNDO, HIGH);
+    digitalWrite(PRIMERO, HIGH);
+    break;
+    case 8:
+    digitalWrite(CUARTO, HIGH);
+    break;
+    case 9:
+    digitalWrite(CUARTO, HIGH);
+    digitalWrite(PRIMERO, HIGH);
+    break;
+    case 10:
+    digitalWrite(CUARTO, HIGH);
+    digitalWrite(SEGUNDO, HIGH);
+    break;
+  }
 }
